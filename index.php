@@ -10,7 +10,8 @@
     <title>PHP сайт</title>
 </head>
 <body>
-<?php require 'blocks/header.php' ?>
+<!--
+     <?php require 'blocks/header.php' ?>
 
 <div class='container mt-5'>
     <h3 class='mb-5'>Наши статьи</h3>
@@ -36,8 +37,30 @@
         <?php endfor  ?>
     </div>
 </div>
-<?php require 'blocks/footer.php' ?>
+<?php require 'blocks/footer.php' ?> 
+-->
 
+<?php 
+$user = 'root';
+$password = 'root';
+$db = 'mybase';
+$host = 'localhost';
+$port = 3307;
+
+$link = mysqli_init();
+$success = mysqli_real_connect(
+   $link, 
+   $host, 
+   $user, 
+   $password, 
+   $db,
+   $port
+);
+ 
+ echo $success;
+
+ 
+?>
 
 </body>
 </html>
